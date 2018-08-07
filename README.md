@@ -13,8 +13,14 @@ Spawn camera from Grand Theft Auto V created for Liberty Unleashed ported to Vic
 Put the "GTAV_Spawn_Pos.nut" file into your Scripts folder of your server.
 The proper directory structure should be: *MainServerDir/Scripts/GTAV_Spawn_Pos.nut*
 
-In order to use this, you must use this in `onPlayerSpawn( player )`
+In order to use this, you must use `dofile( "scripts/GTAV_Spawn_Cam.nut", true );` in `onScriptLoad( )`.
 
-`GTAVSpawn ( player, Vector pPosition );`
+And `GTAVSpawn ( player, Vector pPosition );` in `onPlayerSpawn( player )`
+
+
 
 > The spawn camera script takes care of the rest.
+
+*https://youtu.be/I8Im8rJtZho*
+
+[![Everything Is AWESOME](https://i.imgur.com/vTd1zuu.png)](https://youtu.be/I8Im8rJtZho "Everything Is AWESOME")
