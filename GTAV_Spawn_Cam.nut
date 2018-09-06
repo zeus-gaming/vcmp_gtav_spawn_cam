@@ -8,6 +8,8 @@ function GTAVSpawn( player, pPosition ) {
 
 function SetCameraAbovePlayer ( playerID , fDistance ) {
 	local player = FindPlayer( playerID );
+	if (!player) return;
+	
 	player.SetCameraPos( Vector ( player.Pos.x , player.Pos.y , player.Pos.z + fDistance ), player.Pos );
 	return 1;
 }
@@ -19,6 +21,8 @@ function SetGTAVSpawnCameraHigh ( player ) {
 
 function SetGTAVSpawnCameraMedium ( playerID ) {
 	local player = FindPlayer( playerID );
+	if (!player) return;
+	
 	SetCameraAbovePlayer( player.ID , 400.0 );
 
 	NewTimer ( "SetGTAVSpawnCameraLow" , 3000 , 1 , player.ID );
@@ -26,6 +30,8 @@ function SetGTAVSpawnCameraMedium ( playerID ) {
 
 function SetGTAVSpawnCameraLow ( playerID ) {
 	local player = FindPlayer( playerID );
+	if (!player) return;
+	
 	SetCameraAbovePlayer( player.ID , 50.0 );
 
 	NewTimer ( "SetGTAVSpawnCameraRestore" , 3000 , 1 , player.ID );
@@ -33,6 +39,8 @@ function SetGTAVSpawnCameraLow ( playerID ) {
 
 function SetGTAVSpawnCameraRestore ( playerID ) {
 	local player = FindPlayer( playerID );
+	if (!player) return;
+	
 	player.RestoreCamera( );
 
 	player.Frozen = false;
